@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sending Mail</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+</head>
+
+<body>
+    <form method="post">
+        <input type="button" value="Send Mail" onclick="sendEmail()" />
+    </form>
+
+    <script type="text/javascript">
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "nicolasponji@gmail.com",
+                Password: "Htshooting28",
+                To: 'my9i888@gmail.com',
+                From: "nicolasponji@gmail.com",
+                Subject: "幸福大調查",
+                Body: "Well that was easy!!",
+                Attachments: [
+                    {
+                        name: "File_Name_with_Extension",
+                        path: "Full Path of the file"
+                    }]
+            })
+                .then(function (message) {
+                    alert("Mail has been sent successfully")
+                });
+        }
+    </script>
+</body>
+
+</html>
